@@ -17,6 +17,6 @@ public class PlayerRotation : MonoBehaviour
         float mouseVertical = Input.GetAxis("Mouse Y");
         transform.rotation = transform.rotation * Quaternion.Euler(0, mouseHorizontal, 0);
         Camera cam = GetComponentInChildren<Camera>();
-        cam.transform.localRotation = Quaternion.Euler(-mouseVertical, 0, 0) * cam.transform.localRotation;
+        cam.transform.localRotation = cam.transform.localRotation * Quaternion.Euler(-mouseVertical, 0, 0) ;
     }
 }
