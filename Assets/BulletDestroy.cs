@@ -15,7 +15,7 @@ public class BulletDestroy : MonoBehaviour
     void Update()
     {
         time = time + Time.deltaTime;
-        if(time>3.0f)
+        if(time>2.0f)
         {
             Destroy(gameObject);
         }
@@ -24,6 +24,8 @@ public class BulletDestroy : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
+            TimeManager timeManager = FindObjectOfType<TimeManager>();
+            timeManager.time++;
             Destroy(gameObject);
         }
     }

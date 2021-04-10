@@ -7,11 +7,11 @@ public class BulletSpawn : MonoBehaviour
 {
     public GameObject bullet;
     public float bulletSpeed;
-   
+    AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,7 +23,14 @@ public class BulletSpawn : MonoBehaviour
             bulletReference.transform.position = transform.position;
             Rigidbody rb = bulletReference.GetComponent<Rigidbody>();
             rb.velocity = transform.rotation * Vector3.forward *bulletSpeed;
-            
+            if(audio.isPlaying == false)
+            {
+                audio.Play();
+            }
+            else
+            {
+                audio.Stop();
+            }
         }
         
     }

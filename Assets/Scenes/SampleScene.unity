@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba43cbdbecbdac64fbf19dcf5fdf136b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 10
   timetext: {fileID: 1330037053}
 --- !u!4 &17414506
 Transform:
@@ -179,7 +180,7 @@ GameObject:
   - component: {fileID: 36173534}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,7 +330,7 @@ GameObject:
   - component: {fileID: 384278804}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,7 +347,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.7, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1598245496}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -50.734}
 --- !u!65 &384278804
 BoxCollider:
@@ -422,7 +423,7 @@ GameObject:
   - component: {fileID: 468298215}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -515,7 +516,7 @@ GameObject:
   - component: {fileID: 562198336}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -866,7 +867,7 @@ GameObject:
   - component: {fileID: 773975380}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -883,7 +884,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.7, z: 0.25}
   m_Children: []
   m_Father: {fileID: 1598245496}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 50.734}
 --- !u!65 &773975380
 BoxCollider:
@@ -977,7 +978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b5dabac7915ac4aba3a7c0865988c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myscorevalue: 5
+  health: 1
+  myscorevalue: 1
 --- !u!65 &805528694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1045,8 +1047,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805528692}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.022500038, y: -0.17950004, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -4.88, y: -0.17950004, z: -17.43}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children:
   - {fileID: 562198335}
@@ -1054,7 +1056,7 @@ Transform:
   - {fileID: 468298214}
   m_Father: {fileID: 1820193697}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &833578094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,7 +1071,7 @@ GameObject:
   - component: {fileID: 833578096}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1086,7 +1088,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1598245496}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &833578096
 SphereCollider:
@@ -1162,7 +1164,7 @@ GameObject:
   - component: {fileID: 845795362}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1253,6 +1255,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1339,6 +1342,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3162457390757688977, guid: 6f6948eeee38d86498db8372d6ad461f, type: 3}
   bulletSpeed: 40
+--- !u!82 &963194230
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5053c721cbf0b0b4b8d8d53d83a36ae6, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1066735914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1452,7 @@ GameObject:
   - component: {fileID: 1066735916}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1526,7 +1625,7 @@ GameObject:
   - component: {fileID: 1296752153}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1715,7 +1814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b5dabac7915ac4aba3a7c0865988c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myscorevalue: 5
+  health: 1
+  myscorevalue: 2
 --- !u!65 &1431056133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1783,8 +1883,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431056131}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.0325, y: -0.17950004, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 19.479141, y: -0.17950004, z: -18.132448}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children:
   - {fileID: 845795361}
@@ -1792,7 +1892,7 @@ Transform:
   - {fileID: 36173533}
   m_Father: {fileID: 1820193697}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1547900643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,9 +2078,9 @@ Transform:
   m_LocalPosition: {x: 7.3625, y: -0.17950004, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children:
-  - {fileID: 833578095}
   - {fileID: 773975379}
   - {fileID: 384278803}
+  - {fileID: 833578095}
   m_Father: {fileID: 1820193697}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1996,6 +2096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b5dabac7915ac4aba3a7c0865988c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 2
   myscorevalue: 5
 --- !u!1 &1782060056
 GameObject:

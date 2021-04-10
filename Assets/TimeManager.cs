@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
-    float time = 10.0f;
+    public float time = 10.0f;
     public Text timetext;
 
     private void Update()
@@ -18,4 +18,5 @@ public class TimeManager : MonoBehaviour
             SceneManager.LoadScene(2);
         }
     }
+
 }
