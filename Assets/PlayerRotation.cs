@@ -18,5 +18,7 @@ public class PlayerRotation : MonoBehaviour
         transform.rotation = transform.rotation * Quaternion.Euler(0, mouseHorizontal, 0);
         Camera cam = GetComponentInChildren<Camera>();
         cam.transform.localRotation = cam.transform.localRotation * Quaternion.Euler(-mouseVertical, 0, 0) ;
+        
     }
+   
 }
